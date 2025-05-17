@@ -24,16 +24,19 @@ rm -f ./package.tar.xz
 mv -v ./Telegram ./AppDir && (
 	cd ./AppDir
 	rm -f ./Updater
-
-	ln -s Telegram ./AppRun
-	chmod +x ./Telegram
-
 	wget "$DESKTOP" -O  ./org.telegram.desktop.desktop
 	wget "$ICON"    -O  ./org.telegram.desktop.png
 	wget "$ICON"    -O  ./.DirIcon
+
+	cat > ./AppRun <<- 'KEK'
+	#!/bin/sh
+	CURRENTDIR="$(dirname "$(readlink -f "$0")")"
+	export DESKTOPINTEGRATION=0
+	exec "${CURRENTDIR}/Telegram" "$@"
+	KEK
+	chmod +x ./AppRun ./Telegram
 )
 
 wget "$APPIMAGETOOL" -O ./appimagetool
 chmod +x ./appimagetool
 ./appimagetool -n -u "$UPINFO" ./AppDir
-
