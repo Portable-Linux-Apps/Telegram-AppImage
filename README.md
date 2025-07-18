@@ -1,4 +1,7 @@
-# Telegram-AppImage
+# Telegram-AppImage 🐧
+
+[![GitHub Downloads](https://img.shields.io/github/downloads/Portable-Linux-Apps/Telegram-AppImage/total?logo=github&label=GitHub%20Downloads)](https://github.com/Portable-Linux-Apps/Telegram-AppImage/releases/latest)
+[![CI Build Status](https://github.com//Portable-Linux-Apps/Telegram-AppImage/actions/workflows/blank.yml/badge.svg)](https://github.com/Portable-Linux-Apps/Telegram-AppImage/releases/latest)
 
 This repo takes the [official telegram binaries](https://github.com/telegramdesktop/tdesktop/releases) and turns them into an AppImage. 
 
